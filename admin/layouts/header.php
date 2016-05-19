@@ -9,11 +9,11 @@
     <link rel="shortcut icon" href="http://bucketadmin.themebucket.net/images/favicon.png">
 
     <title>Fontawesome</title>
-
+    
     <!--Core CSS -->
    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="./public/bootstrap.min.css" rel="stylesheet">
-    <link href="./public/bootstrap-reset.css" rel="stylesheet">
+    <?php echo '<link href="./public/bootstrap-reset.css" rel="stylesheet">'; ?>
     <link href="./public/font-awesome.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->

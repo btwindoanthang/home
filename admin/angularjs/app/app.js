@@ -11,7 +11,7 @@ app.filter('startFrom', function() {
 });
 app.controller('customersCrtl', function ($scope, $http, $timeout) {
     
-    $http.get('./angularjs/ajax/getCategory.php').success(function(data){
+    $http.get('./angularjs/ajax/getCategorys.php').success(function(data){
         $scope.list = data;
        
         $scope.currentPage = 1; //current page
@@ -31,6 +31,28 @@ app.controller('customersCrtl', function ($scope, $http, $timeout) {
         $scope.predicate = predicate;
         $scope.reverse = !$scope.reverse;
     };
+    
+    $scope.modal = function (state,id) {
+		$scope.state = state
+		switch (state) {
+			case "add" :
+				$scope.frmTitle = "Add Category";
+				break;
+			case "edit" :
+                            
+				$scope.frmTitle = "Edit Category";
+				$scope.id = id;
+				$http.get('./angularjs/ajax/getCategory.php/?id=' + id).success(function (response) {
+					$scope.category = response;
+                                        console.log(response);
+				});
+				break;
+			default :
+				$scope.frmTitle = "Không Biết";
+				break;
+		}
+		$("#myModal").modal('show');
+	};
 });
 
 

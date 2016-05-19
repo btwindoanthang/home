@@ -276,6 +276,9 @@
 <!--common script init for all pages-->
 <script src="./public/scripts.js"></script>
 
+   
+   
+
 
 
 </body></html>
