@@ -256,7 +256,7 @@
 <!-- Placed js at the end of the document so the pages load faster -->
 
 <!--Core js-->
-<script src="./public/jquery.js"></script>
+<script src="./public/jquery-1.12.3.js"></script>
 <script src="./public/bootstrap.min.js"></script>
 <script class="include" type="text/javascript" src="./public/jquery.dcjqaccordion.2.7.js"></script>
 <script src="./public/jquery.scrollTo.min.js"></script>

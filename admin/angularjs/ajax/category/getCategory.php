@@ -1,18 +1,17 @@
 <?php
 include('../includes/config.php');
 
-$query="select id, name, name2 from category c  order by c.id";
+$query="select id, name, name2 from category  "; 
+$query.=" where id=".$_GET['id'];
 $result = $mysqli->query($query) or die($mysqli->error.__LINE__);
 
-$arr = array();
+ $arr = array();
 if($result->num_rows > 0) {
 	while($row = $result->fetch_assoc()) {
 		$arr[] = $row;	
 	}
 }
-# JSON-encode the response
-$json_response = json_encode($arr);
 
-// # Return the response
+$json_response = json_encode($arr);
 echo $json_response;
 ?>

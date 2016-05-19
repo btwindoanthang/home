@@ -8,7 +8,7 @@
     <meta name="author" content="ThemeBucket">
     <link rel="shortcut icon" href="http://bucketadmin.themebucket.net/images/favicon.png">
 
-    <title>Fontawesome</title>
+    <title>Dashbroad</title>
     
     <!--Core CSS -->
    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">

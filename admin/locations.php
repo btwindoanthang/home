@@ -36,7 +36,7 @@
                 <input type="text" ng-model="search" ng-change="filter()" placeholder="Filter" class="form-control" />
             </div>
             <div class="col-md-4">
-                <h5>Filtered {{ filtered.length}} of {{ totalItems}} total categorys</h5>
+                <h5>Filtered {{ filtered.length}} of {{ totalItems}} total locations</h5>
             </div>
         </div>
         <br/>
@@ -112,7 +112,7 @@
 </div>    
 <script src="./angularjs/js/angular.min.js"></script>
 <script src="./angularjs/js/ui-bootstrap-tpls-0.10.0.min.js"></script>
-<script src="./angularjs/app/appCategorys.js"></script>   
+<script src="./angularjs/app/appLocations.js"></script>   
 
 <?php require_once('/layouts/footer.php'); ?>
 
