@@ -125,9 +125,8 @@
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-3 control-label">ID Category</label>
                                 <div class="col-sm-9">
-                                    <select class="form-control" id="name2" name="idcategory"  ng-model="category.idcategory" ng-required="true">
-                                        <option>1</option>
-                                        <option>2</option>
+                                    <select class="form-control" id="idcategory" name="idcategory"  ng-model="category.idcategory" ng-required="true">
+                                        <option ng-repeat="cate in data_category"  value="{{cate.id}}">{{cate.name}}</option>
                                     </select>
                                     <span id="helpBlock2" class="help-block" ng-show="frmCategory.idcategory.$error.required">Pleae input!</span>
                                 </div>
@@ -135,9 +134,8 @@
                             <div class="form-group" >
                                 <label for="inputEmail3" class="col-sm-3 control-label">ID Location</label>
                                 <div class="col-sm-9">
-                                    <select class="form-control" id="name2" name="idlocaion"  ng-model="category.idlocation" ng-required="true">
-                                        <option>1</option>
-                                        <option>2</option>
+                                    <select class="form-control" id="idlocaion" name="idlocaion"  ng-model="category.idlocation" ng-required="true">
+                                         <option ng-repeat="loca in data_location" value="{{loca.id}}">{{loca.name}}</option>
                                     </select>
                                     </select>
                                     <span id="helpBlock2" class="help-block" ng-show="frmCategory.idlocaion.$error.required">Pleae input!</span>
@@ -153,8 +151,8 @@
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-3 control-label">Image</label>
                                 <div class="col-sm-9">
-                                    <input type="file"  id="image" name="image" file-input="files"    >
-                                    <span id="helpBlock2" class="help-block" ng-show="frmCategory.image.$error.required">Pleae input!</span>
+                                    <input type="file"  id="image" name="image"  >
+                                    
                                 </div>
                             </div>
                             <div class="form-group">

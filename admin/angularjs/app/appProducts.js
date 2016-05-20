@@ -36,15 +36,43 @@ app.controller('customersCrtl', function ($scope, $http, $timeout) {
         $scope.state = state
         switch (state) {
             case "add" :
+                $('#Category')[0].reset();
                 $scope.frmTitle = "Add Product";
+                
+                $http.get('./angularjs/ajax/category/getCategorys.php').success(function (response) {
+                    $scope.data_category = response;
+
+                    console.log($scope.data_category);
+                });
+                $http.get('./angularjs/ajax/location/getLocations.php').success(function (response) {
+                    $scope.data_location = response;
+
+                    console.log($scope.data_category);
+                });
                 break;
             case "edit" :
 
                 $scope.frmTitle = "Edit Product";
+                $('#image').val("");
+                $http.get('./angularjs/ajax/category/getCategorys.php').success(function (response) {
+                    $scope.data_category = response;
+
+                    console.log($scope.data_category);
+                });
+                $http.get('./angularjs/ajax/location/getLocations.php').success(function (response) {
+                    $scope.data_location = response;
+
+                    console.log($scope.data_category);
+                });
                 $scope.id = id;
                 $http.get('./angularjs/ajax/product/getProduct.php?id=' + id).success(function (response) {
                     $scope.data = response;
                     $scope.category = $scope.data[0];
+                    $scope.category.square=parseFloat($scope.category.square, 10);
+                    $scope.category.price=parseFloat($scope.category.price, 10);
+                    $scope.category.bathroom=parseFloat($scope.category.bathroom, 10);
+                    $scope.category.hot=parseFloat($scope.category.square, 10);
+                    $scope.category.bedroom=parseFloat($scope.category.bedroom, 10);
                     console.log($scope.category);
                 });
                 break;
@@ -56,30 +84,33 @@ app.controller('customersCrtl', function ($scope, $http, $timeout) {
     };
     $scope.save = function (state, id) {
         if (state == "add") {
-            var data = new FormData();
-            jQuery.each(jQuery('#image')[0].files, function (i, file) {
-                data.append('file-' + i, file);
-            });
-            
-            //console.log(JSON.stringify(data));
+
+
             var url = './angularjs/ajax/product/addProduct.php';
-            
-            //var data = $.param($scope.category);
-            $http({
-                method: 'POST',
+
+            var formData = new FormData($("form#Category")[0]);
+            formData.append('state', state);
+            $.ajax({
                 url: url,
-                data: data,
-                headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-            })
-                    .success(function (response) {
-                        console.log(response);
-                        return;
+                type: 'POST',
+                data: formData,
+                async: false,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    console.log(response);
+                    if (response== '100') {
+                        alert("Please input image!");
+                    }else if(response== '101'){
+                        alert("Please chose image file for upload image!");
+                    } else {
+                        alert("ADd new item Succsess!");
                         location.reload();
-                    })
-                    .error(function (response) {
-                        console.log(response);
-                        alert('Have errors, Please check log');
-                    });
+                    }
+
+                }
+            });
         }
 
         if (state == "edit") {

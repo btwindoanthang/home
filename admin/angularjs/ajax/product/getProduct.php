@@ -1,7 +1,7 @@
 <?php
 include('../includes/config.php');
 
-$query="select id, name, name2 from location  "; 
+$query="select * from product  "; 
 $query.=" where id=".$_GET['id'];
 $result = $mysqli->query($query) or die($mysqli->error.__LINE__);
 
