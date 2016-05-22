@@ -5,23 +5,17 @@
 
 
 <div class="row">
-    <div class="col-md-12">
-        <ul class="breadcrumbs-alt">
-            <li>
-                <a href="#">Home</a>
-            </li>
-            <li>
-                <a class="active-trail active" href="#">Pages</a>
-            </li>
-            <li>
-                <a class="current" href="#">Elements</a>
-            </li>
-        </ul>
-    </div>
+    <ol class="breadcrumb">
+        <li><a href="./admin.php">Admin</a></li>
+        <li><a href="#" class="active">Products</a></li>
+        
+    </ol>
 </div>
+
+<h1 class="page-header">Products</h1>
 <div  ng-app="myApp"> 
     <div ng-controller="customersCrtl">
-        
+
         <div class="row">
             <div class="col-md-2">PageSize:
                 <select ng-model="entryLimit" class="form-control">
@@ -47,39 +41,40 @@
                     <th >ID&nbsp;<a ng-click="sort_by('id');"><i class="fa fa-sort"></i></a></th>
                     <th>Name EN&nbsp;<a ng-click="sort_by('name');"><i class="fa fa-sort"></i></a></th>
                     <th>Name VI&nbsp;<a ng-click="sort_by('namevi');"><i class="fa fa-sort"></i></a></th>
-                    
-                    
+
+
                     <th width="30">Address&nbsp;<a ng-click="sort_by('adress');"><i class="fa fa-sort"></i></a></th>
                     <th>Image&nbsp;<a ng-click="sort_by('image');"><i class="fa fa-sort"></i></a></th>
                     <th>Price&nbsp;<a ng-click="sort_by('price');"><i class="fa fa-sort"></i></a></th>
                     <th>Bathroom&nbsp;<a ng-click="sort_by('bathroom');"><i class="fa fa-sort"></i></a></th>
                     <th>Bedroom&nbsp;<a ng-click="sort_by('bedroom');"><i class="fa fa-sort"></i></a></th>
-                   
-                    
+
+
                     <th>Derscription EN&nbsp;<a ng-click="sort_by('description');"><i class="fa fa-sort"></i></a></th>
                     <th>Description VI English&nbsp;<a ng-click="sort_by('descriptionvi');"><i class="fa fa-sort"></i></a></th>
                     <th>Map&nbsp;<a ng-click="sort_by('map');"><i class="fa fa-sort"></i></a></th>
-                    <th><button id="btn-add" class="btn btn-primary btn" ng-click="modal('add')" >Add Category</button></th>
+                    <th><button id="btn-add" class="btn btn-primary btn" ng-click="modal('add')" >Add New Product</button></th>
                     </thead>
                     <tbody>
                         <tr ng-repeat="data in filtered = (list| filter:search | orderBy : predicate :reverse) | startFrom:(currentPage - 1) * entryLimit | limitTo:entryLimit">
                             <td>{{data.id}}</td>
                             <td>{{data.name}}</td>
                             <td>{{data.namevi}}</td>
-                            
+
                             <td>{{data.adress}}</td>
-                            <td>{{data.image}}</td>
+                            <td><img height="100" width="100" src="../img/product/{{data.image}}"/></td>
                             <td>{{data.price}}</td>
                             <td>{{data.bathroom}}</td>
                             <td>{{data.bedroom}}</td>
-                            
+
                             <td>{{data.description}}</td>
                             <td>{{data.descriptionvi}}</td>
                             <td>{{data.map}}</td>
 
                             <td>
-                                <button class="btn btn-default btn btn-detail" id="btn-edit" ng-click="modal('edit',data.id)">Sửa</button>
-                                <button class="btn btn-danger btn btn-delete" ng-click="confirmDelete(data.id)">Xóa</button>
+                                <button class="btn btn-default btn btn-xs btn-detail" id="btn-edit" ng-click="modal('edit',data.id)">Edit</button>
+                                <button class="btn btn-default btn-xs" id="btn-edit" ng-click="modal2(data.id)">Image</button>
+                                <button class="btn btn-danger btn btn-xs btn-delete" ng-click="confirmDelete(data.id,data.image)">Delete</button>
                             </td>
                         </tr>
                     </tbody>
@@ -111,14 +106,14 @@
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-3 control-label">Name VI</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="name" name="namevi"  ng-model="category.namevi" ng-required="true" />
+                                    <input type="text" class="form-control" id="namevi" name="namevi"  ng-model="category.namevi" ng-required="true" />
                                     <span id="helpBlock2" class="help-block" ng-show="frmCategory.namevi.$error.required">Pleae input!</span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-3 control-label">Name EN</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="name2" name="name"  ng-model="category.name" ng-required="true" >
+                                    <input type="text" class="form-control" id="name" name="name"  ng-model="category.name" ng-required="true" >
                                     <span id="helpBlock2" class="help-block" ng-show="frmCategory.name.$error.required">Pleae input!</span>
                                 </div>
                             </div>
@@ -135,7 +130,7 @@
                                 <label for="inputEmail3" class="col-sm-3 control-label">ID Location</label>
                                 <div class="col-sm-9">
                                     <select class="form-control" id="idlocaion" name="idlocaion"  ng-model="category.idlocation" ng-required="true">
-                                         <option ng-repeat="loca in data_location" value="{{loca.id}}">{{loca.name}}</option>
+                                        <option ng-repeat="loca in data_location" value="{{loca.id}}">{{loca.name}}</option>
                                     </select>
                                     </select>
                                     <span id="helpBlock2" class="help-block" ng-show="frmCategory.idlocaion.$error.required">Pleae input!</span>
@@ -144,7 +139,7 @@
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-3 control-label">Address</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="name2" name="adress"  ng-model="category.adress" ng-required="true" >
+                                    <input type="text" class="form-control" id="adress" name="adress"  ng-model="category.adress" ng-required="true" >
                                     <span id="helpBlock2" class="help-block" ng-show="frmCategory.adress.$error.required">Pleae input!</span>
                                 </div>
                             </div>
@@ -152,81 +147,138 @@
                                 <label for="inputEmail3" class="col-sm-3 control-label">Image</label>
                                 <div class="col-sm-9">
                                     <input type="file"  id="image" name="image"  >
-                                    
+
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-3 control-label">Price</label>
                                 <div class="col-sm-9">
-                                    <input type="number" class="form-control" id="name2" name="price"  ng-model="category.price" ng-required="true" >
+                                    <input type="number" class="form-control" id="price" name="price"  ng-model="category.price" ng-required="true" >
                                     <span id="helpBlock2" class="help-block" ng-show="frmCategory.price.$error.required">Pleae input!</span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-3 control-label">Bathroom</label>
                                 <div class="col-sm-9">
-                                    <input type="number" class="form-control" id="name2" name="bathroom"  ng-model="category.bathroom" ng-required="true" >
+                                    <input type="number" class="form-control" id="bathroom" name="bathroom"  ng-model="category.bathroom" ng-required="true" >
                                     <span id="helpBlock2" class="help-block" ng-show="frmCategory.bathroom.$error.required">Pleae input!</span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-3 control-label">Bedroom</label>
                                 <div class="col-sm-9">
-                                    <input type="number" class="form-control" id="name2" name="bedroom"  ng-model="category.bedroom" ng-required="true" >
+                                    <input type="number" class="form-control" id="bedroom" name="bedroom"  ng-model="category.bedroom" ng-required="true" >
                                     <span id="helpBlock2" class="help-block" ng-show="frmCategory.bedroom.$error.required">Pleae input!</span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-3 control-label">For sale</label>
                                 <div class="col-sm-9">
-                                    <input type="number" class="form-control" id="name2" name="forsale"  ng-model="category.forsale" ng-required="true" >
-                                    <span id="helpBlock2" class="help-block" ng-show="frmCategory.forsale.$error.required">Pleae input!</span>
+                                    <select class="form-control" id="forsale" name="forsale"  ng-model="category.forsale" ng-required="true">
+                                        <option value="0">For Rent</option>
+                                        <option value="1">For Sale</option>
+                                    </select>
+                                    
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-3 control-label">Hot</label>
                                 <div class="col-sm-9">
-                                    <input type="number" class="form-control" id="name2" name="hot"  ng-model="category.hot" ng-required="true" >
-                                    <span id="helpBlock2" class="help-block" ng-show="frmCategory.hot.$error.required">Pleae input!</span>
+                                    <select class="form-control" id="hot" name="hot"  ng-model="category.hot" ng-required="true">
+                                        <option value="0">No hot</option>
+                                        <option value="1">Hot</option>
+                                    </select>
+                                    
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-3 control-label">Square</label>
                                 <div class="col-sm-9">
-                                    <input type="number" class="form-control" id="name2" name="square"  ng-model="category.square" ng-required="true" >
+                                    <input type="number" class="form-control" id="square" name="square"  ng-model="category.square" ng-required="true" >
                                     <span id="helpBlock2" class="help-block" ng-show="frmCategory.square.$error.required">Pleae input!</span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-3 control-label">Description VI</label>
                                 <div class="col-sm-9">
-                                    <textarea class="form-control" id="name2" name="descriptionvi"  ng-model="category.descriptionvi" ng-required="true"  rows="6"></textarea>
-                                    
+                                    <textarea class="form-control" id="descriptionvi" name="descriptionvi"  ng-model="category.descriptionvi" ng-required="true"  rows="6"></textarea>
+
                                     <span id="helpBlock2" class="help-block" ng-show="frmCategory.descriptionvi.$error.required">Pleae input!</span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-3 control-label">Description EN</label>
                                 <div class="col-sm-9">
-                                    <textarea class="form-control" id="name2" name="description"  ng-model="category.name2" ng-required="true"  rows="6"></textarea>
-                                    
+                                    <textarea class="form-control" id="description" name="description"  ng-model="category.description" ng-required="true"  rows="6"></textarea>
+
                                     <span id="helpBlock2" class="help-block" ng-show="frmCategory.description.$error.required">Pleae input!</span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-3 control-label">Map</label>
                                 <div class="col-sm-9">
-                                    <textarea class="form-control" id="name2" name="map"  ng-model="category.map" ng-required="true"  rows="6"></textarea>
+                                    <textarea class="form-control" id="map" name="map"  ng-model="category.map" ng-required="true"  rows="6"></textarea>
                                     <span id="helpBlock2" class="help-block" ng-show="frmCategory.map.$error.required">Pleae input!</span>
                                 </div>
                             </div>
+
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary" ng-disabled="frmCategory.$invalid" ng-click="save(state,id,category.image)">Save</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        
+         <div class="modal fade" role="dialog" id="myModal2">
+            <div class="modal-dialog ">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Image</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form name="imageform" class="form-horizontal" id="imageform" method="post" enctype="multipart/form-data">
+                            
+                            
+                           
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-3 control-label"  >Image</label>
+                                <div class="col-sm-9">
+                                    <input type="file"  id="file" name="file[]" multiple ng-required="true">
+
+                                </div>
+                            </div>
+                            
+                           
+
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary" ng-disabled="imageform.$invalid" ng-click="save_image(id)">Save</button>
+                            </div>
+                        </form>
                         
-                        <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary" ng-disabled="frmCategory.$invalid" ng-click="save(state,id)">Save</button>
+                         <table class="table table-striped table-bordered">
+                    <thead>
+                    <th >ID</th>
+                    <th>Name</th>
+                 
+                    <th></th>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="data in data_image">
+                            <td>{{data.id}}</td>
+                            <td><img height="100" width="100" src="../img/product/{{data.name}}"/></td>
+                            <td>
+                                
+                                <button class="btn btn-danger btn btn-delete" ng-click="Delete(data.id,data.name)">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
                     </div>
-                            </form>
-                    </div>
-                    
+
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->

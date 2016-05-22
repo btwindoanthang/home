@@ -114,7 +114,7 @@ while ($fetch = mysql_fetch_array($query)) {
                     <tbody >
                         <tr>
                             <td class="title">- <?php echo constant("CODE"); ?>:</td>
-                            <td class="info" style="color: #ECA500">MA<?php echo $item[0]['id'] ?></td>
+                            <td class="info" style="color: #ECA500">MA<?php echo $item[0]['id'] ?>  <span class="label label-success"><?php if($item[0]['id']==0){echo constant("RENT");}else{ echo constant("SALE");} ?></span></td>
                         </tr>
                         <tr>
                             <td class="title">- <?php echo constant("ROOMS"); ?>:</td>
@@ -122,7 +122,7 @@ while ($fetch = mysql_fetch_array($query)) {
                         </tr>
                         <tr>
                             <td class="title">- <?php echo constant("PRICE"); ?>:</td>
-                            <td class="info" style="color: #ECA500"><?php echo $item[0]['price'] ?> <?php if($item[0]['forsale']==1){echo constant("BILLION").' '.constant("VND"); }else{ echo constant('USD');} ?></td>
+                            <td class="info" style="color: #ECA500"><?php  ?>  <?php if($_SESSION['lang']!=1){echo $item[0]['price']*22000 .' '. constant("VND"); }else{ echo $item[0]['price'].' '.constant('USD');} ?></td>
                         </tr>
                         <tr>
                             <td class="title">- <?php echo constant("TYPE"); ?>:</td>

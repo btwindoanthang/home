@@ -229,7 +229,7 @@ if ($_SESSION['lang'] == 1) {
                                             <div class="col-md-8 col-sm-12">
                                                 <p class="product-detail">
                                                     <span class="title"><?php echo constant("CODE"); ?>: </span>
-                                                    <span class="detail">MA<?php echo $p1[0] ?></span>
+                                                    <span class="detail">MA<?php echo $p1[0] ?>  </span><span class="label label-success"><?php if($p1[10]==0){echo constant("RENT");}else{ echo constant("SALE");} ?></span>
                                                 </p>
                                                 <p class="product-detail">
                                                     <span class="title"><?php echo constant("ROOMS"); ?>: </span>
@@ -237,13 +237,7 @@ if ($_SESSION['lang'] == 1) {
                                                 </p>
                                                 <p class="product-detail">
                                                     <span class="title"><?php echo constant("PRICE"); ?>: </span>
-                                                    <span class="detail"><?php echo $p1[7] ?> <?php
-                                                        if ($p1['forsale'] == 1) {
-                                                            echo constant("BILLION") . ' ' . constant("VND");
-                                                        } else {
-                                                            echo constant('USD');
-                                                        }
-                                                        ?></span>
+                                                    <span class="detail"><?php ?><?php if($_SESSION['lang']!=1){echo $p1[7]*22000 .' '. constant("VND"); }else{ echo $p1[7].' '.constant('USD');} ?></span>
                                                 </p>
                                                 <p class="product-detail">
                                                     <span class="title"><?php echo constant("LOCATION"); ?>: </span>

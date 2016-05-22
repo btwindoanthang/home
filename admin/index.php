@@ -51,13 +51,13 @@
 <body>
 
 	<div class="container-fluid">
-	  <form id="frm_signin" class="form-signin">
+            <form id="frm_signin" class="form-signin" method="POST" action="./login.php">
 		<h2 class="form-signin-heading">Please sign in</h2>
 			<div class="alert alert-block" id="msg_error">
 			</div>
-		<input id="log_on_nm" type="text" maxlength="50" class="input-block-level" placeholder="Log in Name">
-		<input id="psd" type="password" maxlength="20" class="input-block-level" placeholder="Password">
-		<button id="signin" class="btn btn-large btn-primary" type="button">Sign in</button>
+                <input id="log_on_nm" name="log_on_nm" type="text" maxlength="50" class="input-block-level" placeholder="Log in Name">
+                <input id="psd" name="psd" type="password" maxlength="20" class="input-block-level" placeholder="Password">
+                <button id="signin" class="btn btn-large btn-primary" type="submit">Sign in</button>
 	  </form>
 
 	</div> <!-- class="container -->

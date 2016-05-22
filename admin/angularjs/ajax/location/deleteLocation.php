@@ -2,7 +2,7 @@
 
 include('../includes/config.php');
 extract($_GET);
-$query="update location set delete_flg=1 where id="."'".$id."'";
+$query="delete from location  where id="."'".$id."'";
 $result = $mysqli->query($query) or die($mysqli->error.__LINE__);
 $result = $mysqli->affected_rows;
  

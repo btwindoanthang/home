@@ -42,7 +42,7 @@ while ($fetch = mysql_fetch_array($query)) {
                 <div class="block-child-2">
                     <ol class="ul-name">
                         <li><?php echo $p['adress']; ?> </li>
-                        <li><?php echo $p['price']; ?> <?php if($p['forsale']==1){echo constant("BILLION").' '.constant("VND"); }else{ echo constant('USD');} ?></li>
+                        <li><?php ?> <?php if($_SESSION['lang']!=1){echo $p['price']*22000 .' '. constant("VND"); }else{ echo $p['price'].' '.constant('USD');} ?></li>
                         <li><?php echo $p['square']; ?>m2</li>
                         <li>Bed: <?php echo $p['bedroom'];?> - Bath: <?php echo $p['bathroom']?></li>
                         <li><?php echo $p['id'];?></li>

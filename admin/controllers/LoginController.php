@@ -3,6 +3,7 @@ require_once(dirname(dirname(dirname(__FILE__))).'/libs/database.php');
 require_once( dirname(dirname(dirname(__FILE__))).'/admin/models/TMUser.php');
 ?>
 <?php 
+session_start();
 $json = array('status'=>'0', 'message'=>'');
 		if ( !empty( $_POST ) ) {
 			extract( $_POST );

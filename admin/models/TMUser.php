@@ -20,8 +20,14 @@ class TMUser {
 	}
     public function findLogonUser($log_on_nm, $psd){
          $db = $this->db;
+         
         $sql="select * from user where id='$log_on_nm'and pass='$psd'";
         $result= mysql_query($sql);
+        if($result->num_rows > 0) {
+	while($row = $result->fetch_assoc()) {
+		$_SESSION['id'] = $row['id'];	
+	}
+}
         if(mysql_num_rows($result)<>0)
         {
         return 1;  

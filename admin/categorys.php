@@ -5,20 +5,14 @@
 
 
 <div class="row">
-    <div class="col-md-12">
-        <ul class="breadcrumbs-alt">
-            <li>
-                <a href="#">Home</a>
-            </li>
-            <li>
-                <a class="active-trail active" href="#">Pages</a>
-            </li>
-            <li>
-                <a class="current" href="#">Elements</a>
-            </li>
-        </ul>
-    </div>
+    <ol class="breadcrumb">
+        <li><a href="./admin.php">Admin</a></li>
+        <li><a href="#" class="active">Category</a></li>
+        
+    </ol>
 </div>
+
+<h1 class="page-header">Categorys</h1>
 <div  ng-app="myApp"> 
     <div ng-controller="customersCrtl">
 
@@ -86,14 +80,14 @@
                     <div class="modal-body">
                         <form name="frmCategory" class="form-horizontal">
                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-3 control-label">Việt Nam Name</label>
+                                <label for="inputEmail3" class="col-sm-3 control-label">English Name</label>
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control" id="name" name="name"  ng-model="category.name" ng-required="true" />
                                     <span id="helpBlock2" class="help-block" ng-show="frmCategory.name.$error.required">Pleae input!</span>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-3 control-label">English Name</label>
+                                <label for="inputEmail3" class="col-sm-3 control-label">Viet Nam Name</label>
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control" id="name2" name="name2"  ng-model="category.name2" ng-required="true" >
                                     <span id="helpBlock2" class="help-block" ng-show="frmCategory.name2.$error.required">Pleae input!</span>

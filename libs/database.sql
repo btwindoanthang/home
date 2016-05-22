@@ -60,7 +60,7 @@ delete_flg integer
 create table image
 (
 id integer AUTO_INCREMENT primary key,
-product_id integer,
+idproduct integer,
 name VARCHAR(100) CHARSET utf8,
 delete_flg integer
 );
