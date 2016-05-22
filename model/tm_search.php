@@ -37,28 +37,28 @@ if (isset($loca)) {
 if (isset($range)) {
     switch ($range) {
         case 1:
-            $sql .= "and price >=1 and price <2 ";
+            $sql .= "and price >=50000 and price <100000 ";
             break;
         case 2:
-            $sql .= "and price >=2 and price <3 ";
+            $sql .= "and price >=100000 and price <200000 ";
             break;
         case 3:
-            $sql .= "and price >=3 and price <4 ";
+            $sql .= "and price >=300000 and price <400000 ";
             break;
         case 4:
-            $sql .= "and price >=4  ";
+            $sql .= "and price >=400000  ";
             break;
         case 5:
             $sql .= "and price >=100 and price <200 ";
             break;
         case 6:
-            $sql .= "and price >=200 and price <250 ";
+            $sql .= "and price >=200 and price <300 ";
             break;
         case 7:
-            $sql .= "and price >=250 and price <300 ";
+            $sql .= "and price >=300 and price <400 ";
             break;
         case 8:
-            $sql .= "and price >=300  ";
+            $sql .= "and price >=400  ";
             break;
     }
 }

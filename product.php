@@ -402,10 +402,10 @@ if ($_SESSION['lang'] == 1) {
                                     <label class="lable-input"><?php echo constant("PRICE"); ?></label>
                                     <div id="range">
                                         <select class="form-control" name="range">
-                                            <option value="1">1-2 <?php echo constant("BILLION"); ?> <?php echo constant("VND"); ?></option>
-                                            <option value="2">2-3 <?php echo constant("BILLION"); ?> <?php echo constant("VND"); ?></option>
-                                            <option value="3">3-4 <?php echo constant("BILLION"); ?> <?php echo constant("VND"); ?></option>
-                                            <option value="4">4 <?php echo constant("BILLION"); ?> <?php echo constant("VND"); ?> - <?php echo constant("ABOVE"); ?></option>
+                                            <option value="1">$50000-$100000 </option>
+                                            <option value="2">$200000-$300000 </option>
+                                            <option value="3">$300000-$400000 </option>
+                                            <option value="4">$400000  - <?php echo constant("ABOVE"); ?></option>
                                         </select>
                                     </div>
 
@@ -619,23 +619,14 @@ if ($_SESSION['lang'] == 1) {
 <script>
     function change(x)
     {
-        if (x !=0)
+        if (x ==0)
         {
-            if(<?php echo $_SESSION['lang']; ?>==1)
-            {
-                $('#range').html('<select class="form-control" name="range"><option value="5">$100 - $200</option><option value="6">$200 - $250</option><option value="7">$250 - $300</option><option value="8">$300 - Above</option></select>');
-            }
-            else{
-                    $('#range').html('<select class="form-control" name="range"><option value="5">100 -200 USD</option><option value="6">200 - 250 USD</option><option value="7">250 - 300 USD</option><option value="8">300 USD - Hơn</option></select>');
-            }
+            
+            $('#range').html('<select class="form-control" name="range"><option value="1">$50000 - $100000</option><option value="2">$100000 - $200000</option><option value="3">$200000 - $300000</option><option value="4">$300000 - Above</option></select>');   
         }
         else
         {
-        if(<?php echo $_SESSION['lang']; ?>==1)
-        {$('#range').html('<select class="form-control" name="range"><option value="1">1-2 Billion VND</option><option value="2">2-3 Billion VND</option><option value="3">3-4 Billion VND</option><option value="4">4 Billion VND -above</option></select>');}
-        else{
-            $('#range').html('<select class="form-control" name="range"><option value="1">1-2 Tỷ VND</option><option value="2">2-3 Tỷ VND</option><option value="3">3-4 Tỷ VND</option><option value="4">4 Tỷ VND -Hơn</option></select>');
-        }
+            $('#range').html('<select class="form-control" name="range"><option value="5">$100-$200</option><option value="6">$200-$300</option><option value="7">$300-$400</option><option value="8">$400 - Above</option></select>');
         }
     }
     function reload() {
