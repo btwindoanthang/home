@@ -17,10 +17,10 @@
 <meta http-equiv='pragma' content='no-cache'>
 
 <!-- Styles -->
-<link href="/htdocs/css/sidebar.css" rel="stylesheet">
-<link href="/htdocs/css/bootstrap.css" rel="stylesheet">
-<link href="/htdocs/css/bootstrap-responsive.css" rel="stylesheet">
-<link rel="stylesheet" href="/htdoc/css/font-awesome.css">
+<link href="../htdocs/css/sidebar.css" rel="stylesheet">
+<link href="../htdocs/css/bootstrap.css" rel="stylesheet">
+<link href="../htdocs/css/bootstrap-responsive.css" rel="stylesheet">
+<link rel="stylesheet" href="../htdoc/css/font-awesome.css">
 <!--[if IE 7]>
   <link rel="stylesheet" href="/css/font-awesome-ie7.css">
 <![endif]-->
@@ -39,8 +39,8 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/ico/apple-touch-icon-144-precomposed.png">
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/ico/apple-touch-icon-114-precomposed.png">
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/ico/apple-touch-icon-72-precomposed.png">
-<link rel="apple-touch-icon-precomposed" href="/img/ico/apple-touch-icon-57-precomposed.png">
-<link rel="shortcut icon" href="/img/ico/favicon.png">
+<link rel="apple-touch-icon-precomposed" href="../img/ico/apple-touch-icon-57-precomposed.png">
+<link rel="shortcut icon" href="../img/ico/favicon.png">
 
 <! -- Google Analytics Code -->
 <script type="text/javascript">
@@ -78,9 +78,9 @@
 <!-- Le javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="/htdocs/js/jquery.js"></script>
-<script src="/htdocs/js/bootstrap.js"></script>
-<script src="/htdocs/js/admin/login.js"></script>
+<script src="../htdocs/js/jquery.js"></script>
+<script src="../htdocs/js/bootstrap.js"></script>
+<script src="../htdocs/js/admin/login.js"></script>
 
 <!-- Transitions
 ================================================== -->

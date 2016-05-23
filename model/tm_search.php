@@ -25,13 +25,19 @@ if ($_SESSION['lang'] == 1) {
 $sql.=' from product p,category c, location l';
 $sql.=' where p.idlocation=l.id and p.idcategory=c.id';
 
+if (isset($cate)) {
+    $sql .=" and idlocation='$cate' ";
+}
 if (isset($loca)) {
     $sql .=" and idlocation='$loca' ";
 }
-if (isset($loca)) {
+if (isset($idlocation)) {
+    $sql .=" and idlocation='$idlocation' ";
+}
+if (isset($bed)) {
     $sql .=" and bedroom='$bed' ";
 }
-if (isset($loca)) {
+if (isset($bath)) {
     $sql .=" and bathroom='$bath' ";
 }
 if (isset($range)) {
@@ -67,6 +73,7 @@ if (isset($optradio) && $optradio == 0) {
 } else {
     $sql .=" and forsale='1' ";
 }
+
 if (!isset($page)) {
     $page = 0;
 }

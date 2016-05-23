@@ -289,25 +289,28 @@ if ($_SESSION['lang'] == 1) {
                                                             }
                                                             ?>&page=<?php if($page+1>1){ echo $page-1;} ?>"><<</a></li>
                                         <?php for ($i = 0; $i < $totalpage; $i++) { ?>
-                                            <li class="<?php if($page==$i){echo 'active';} ?>"><a href="search.php?optradio=<?php
+                                            <li class="<?php if($page==$i){echo 'active';} ?>"><a href="search.php?name=search<?php
                                                 if (isset($optradio)) {
-                                                    echo "$optradio";
+                                                    echo "optradio=".$optradio;
                                                 }
-                                                ?>&loca=<?php
+                                                ?><?php
                                                             if (isset($loca)) {
-                                                                echo "$loca";
+                                                                echo "&loca=".$loca;
                                                             }
-                                                            ?>&range=<?php
+                                                            ?><?php
                                                             if (isset($range)) {
-                                                                echo "$range";
+                                                                echo "&range=".$range;
                                                             }
-                                                            ?>&bed=<?php
+                                                            ?><?php
                                                             if (isset($bed)) {
-                                                                echo "$bed";
+                                                                echo "&bed=".$bed;
                                                             }
-                                                            ?>&bath=<?php
+                                                            ?><?php
                                                             if (isset($bath)) {
-                                                                echo "$bath";
+                                                                echo "&bath=".$bath;
+                                                            }?><?php
+                                                            if (isset($idlocation)) {
+                                                                echo "&idlocation=".$idlocation;
                                                             }
                                                             ?>&page=<?php echo $i; ?>" ><?php echo 1 + $i; ?></a></li>
 
@@ -440,6 +443,17 @@ if ($_SESSION['lang'] == 1) {
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
+                                    <label class="lable-input"><?php echo constant("CATEGORY"); ?></label>
+                                    <select class="form-control" name="cate">
+                                        <?php foreach ($category as $lo) { ?>
+                                            <option value="<?php echo $lo['id']; ?>"><?php echo $lo['name']; ?></option>
+                                        <?php } ?>  
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
                                     <label class="lable-input"><?php echo constant("LOCATION"); ?></label>
                                     <select class="form-control" name="loca">
                                         <?php foreach ($location as $lo) { ?>
@@ -501,6 +515,19 @@ if ($_SESSION['lang'] == 1) {
                         </div>
                         <!-- End - form search -->
                     </form>
+                    
+                    <!-- location  -->
+                    <div class=" row search-form">
+                        <br/><br/>
+                            <div class="list-group">
+                                <p class="list-group-item name-group" style="color: black; background-color: #12BAD1;">Location</p>
+                                    <?php foreach ($location as $lo) { ?>
+                                    <a class="list-group-item" href="./search.php?idlocation=<?php echo $lo['id']; ?>"> <?php echo $lo['name']; ?> </a>   
+                                            
+                                    <?php } ?>  
+                                    
+                                </div>
+                        </div>
                     <!-- form contact -->
                     <form class="row form-compare">
                         <h4 class="content-title"><?php echo constant("CONTACT"); ?></h4>

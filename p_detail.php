@@ -114,7 +114,7 @@ while ($fetch = mysql_fetch_array($query)) {
                     <tbody >
                         <tr>
                             <td class="title">- <?php echo constant("CODE"); ?>:</td>
-                            <td class="info" style="color: #ECA500">MA<?php echo $item[0]['id'] ?>  <span class="label label-success"><?php if($item[0]['id']==0){echo constant("RENT");}else{ echo constant("SALE");} ?></span></td>
+                            <td class="info" style="color: #ECA500">MA<?php echo $item[0]['id'] ?>  <span class="label label-success"><?php if($item[0]['forsale']==0){echo constant("RENT");}else{ echo constant("SALE");} ?></span></td>
                         </tr>
                         <tr>
                             <td class="title">- <?php echo constant("ROOMS"); ?>:</td>

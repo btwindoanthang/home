@@ -1,7 +1,7 @@
 <?php
 include('../includes/config.php');
 
-$query="select id,name,namevi,adress,price,image,bathroom,bedroom,description,descriptionvi,map from product  where delete_flg='0' order by id ";
+$query="select id,name,namevi,adress,price,image,bathroom,bedroom,description,descriptionvi,map from product  where delete_flg='0' order by id desc";
 
 $result = $mysqli->query($query) or die($mysqli->error.__LINE__);
 

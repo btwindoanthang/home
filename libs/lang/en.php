@@ -8,6 +8,7 @@ define('HOT_PROPRETY', 'Hot Property');
 define('RENT', 'For Rent');
 define('SALE', 'For Sale');
 define('LOCATION', 'Location');
+define('CATEGORY', 'Category');
 define('TYPE', 'Type');
 define('FIND_HOME', 'Find Your Home');
 define('FIND', 'Find');

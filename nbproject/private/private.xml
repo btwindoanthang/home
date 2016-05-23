@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/E:/xampp/htdocs/home/admin/angularjs/app/appLocations.js</file>
+            <file>file:/E:/xampp/htdocs/home/admin/products.php</file>
+            <file>file:/E:/xampp/htdocs/home/admin/layouts/header.php</file>
+            <file>file:/E:/xampp/htdocs/home/admin/angularjs/ajax/product/addProduct.php</file>
+            <file>file:/E:/xampp/htdocs/home/libs/database.sql</file>
+            <file>file:/E:/xampp/htdocs/home/admin/categorys.php</file>
+            <file>file:/E:/xampp/htdocs/home/admin/angularjs/app/appProducts.js</file>
+            <file>file:/E:/xampp/htdocs/home/admin/angularjs/ajax/product/getProduct.php</file>
+            <file>file:/E:/xampp/htdocs/home/admin/controllers/product/add_product.php</file>
+        </group>
+    </open-files>
 </project-private>

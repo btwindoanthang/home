@@ -8,6 +8,7 @@ define('HOT_PROPRETY', 'Sản Phẩm Hot');
 define('RENT', 'Cho Thuê');
 define('SALE', 'Bán');
 define('LOCATION', 'Vị Trí');
+define('CATEGORY', 'Danh Mục');
 define('TYPE', 'Loại');
 define('FIND_HOME', 'Tìm Kiếm Nhà');
 define('FIND', 'Tìm');
