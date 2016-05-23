@@ -58,6 +58,7 @@
             </div>
             <div class="col-md-12" ng-show="filteredItems == 0">
                 <div class="col-md-12">
+                    <button id="btn-add" class="btn btn-primary btn" ng-click="modal('add')" >Add Category</button>
                     <h4>No customers found</h4>
                 </div>
             </div>

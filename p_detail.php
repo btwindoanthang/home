@@ -117,7 +117,7 @@ while ($fetch = mysql_fetch_array($query)) {
                             <td class="info" style="color: #ECA500">MA<?php echo $item[0]['id'] ?>  <span class="label label-success"><?php if($item[0]['forsale']==0){echo constant("RENT");}else{ echo constant("SALE");} ?></span></td>
                         </tr>
                         <tr>
-                            <td class="title">- <?php echo constant("ROOMS"); ?>:</td>
+                            <td class="title">- <?php echo constant("BED_ROOM"); ?>:</td>
                             <td class="info" style="color: #ECA500"><?php echo $item[0]['bedroom'] ?></td>
                         </tr>
                         <tr>
@@ -153,6 +153,13 @@ while ($fetch = mysql_fetch_array($query)) {
                 <a class="col-md-4" href="" title="">Garden</a>
                 <a class="col-md-4" href="" title="">Yard</a>
             </div>
+        </div>
+        
+        <div class="col-md-12 feature">
+            <h4 class="feature-title" ><?php echo constant("CONTACT"); ?></h4>
+            <h4><span class="glyphicon glyphicon-phone-alt"></span>  0933 88 3003</h4>
+            <h4><span class="glyphicon glyphicon-envelope"></span>  apartment-villa@gmail.com</h4>
+            
         </div>
         <!-- END - Feature -->
 
